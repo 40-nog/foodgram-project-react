@@ -1,6 +1,7 @@
 from djoser.serializers import UserCreateSerializer
 from drf_extra_fields.fields import Base64ImageField
 from rest_framework import serializers
+from rest_framework.pagination import PageNumberPagination
 
 from recipes.models import (FavoriteRecipes, Ingredient, Recipe,
                             RecipeIngredient, ShoppingCart, Tag)
@@ -257,7 +258,8 @@ class UserSubscrptionSerializer(serializers.ModelSerializer):
         if request.user.is_anonymous or not request:
             return False
         recipes = Recipe.objects.filter(author=obj)
-
+        paginator = PageNumberPagination()
+        paginator.page_size_query_param = 'limit'
         return ShortenedRecipeSerializer(
             recipes, many=True, context={'request': request}).data
 
