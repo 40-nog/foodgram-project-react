@@ -43,7 +43,7 @@ jobs:
           push: true
           #context: ./backend/foodgram/
           tags: nava40a/foodgram_backend
-          file: foodgram_project/Dockerfile
+          file: backend/foodgram_project/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
