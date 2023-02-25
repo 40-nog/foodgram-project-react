@@ -41,8 +41,9 @@ jobs:
         uses: docker/build-push-action@v2 
         with:
           push: true
-          context: ./backend/foodgram/
+          #context: ./backend/foodgram/
           tags: nava40a/foodgram_backend
+          file: foodgram_project/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
