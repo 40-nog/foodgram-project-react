@@ -58,7 +58,6 @@ jobs:
           script: |
             sudo docker-compose stop
             sudo docker-compose rm backend
-            sudo docker-compose rm frontend
             
             
             touch .env
