@@ -8,6 +8,7 @@ class RecipeFilter(filter.FilterSet):
     author = filter.CharFilter()
     tags = filter.ModelMultipleChoiceFilter(
         field_name='tags__slug',
+        to_field_name='slug',
         queryset=Tag.objects.all(),
     )
     is_favorited = filter.BooleanFilter(method='get_favorited')
