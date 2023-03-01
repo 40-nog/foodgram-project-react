@@ -15,7 +15,7 @@ from recipes.models import (FavoriteRecipes, Ingredient, Recipe, ShoppingCart,
                             Tag)
 from users.models import Subscription, User
 
-from .filters import RecipeFilter, IngredientNameFilter
+from .filters import IngredientNameFilter, RecipeFilter
 from .permissions import IsAdminOrAuthorOrReadonly
 from .serializers import (FavoriteRecipesSerializer, IngredientSerializer,
                           RecipeCreateUpdateSerializer, RecipeIngredient,
