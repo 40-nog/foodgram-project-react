@@ -15,7 +15,7 @@ from recipes.models import (FavoriteRecipes, Ingredient, Recipe, ShoppingCart,
                             Tag)
 from users.models import Subscription, User
 
-from .filters import IngredientNameFilter, RecipeFilter
+from .filters import RecipeFilter, IngredientNameFilter
 from .permissions import IsAdminOrAuthorOrReadonly
 from .serializers import (FavoriteRecipesSerializer, IngredientSerializer,
                           RecipeCreateUpdateSerializer, RecipeIngredient,
@@ -49,7 +49,7 @@ class IngredientViewSet(viewsets.ReadOnlyModelViewSet):
 class TagViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Tag.objects.all()
     serializer_class = TagSerializer
-    permission_classes = (IsAuthenticatedOrReadOnly,)
+    permission_classes = (AllowAny,)
     pagination_class = None
 
 
