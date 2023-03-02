@@ -34,6 +34,7 @@ class IngredientAdmin(admin.ModelAdmin):
 class TagAdmin(admin.ModelAdmin):
     list_display = ('name', 'color', 'slug')
     list_filter = ('name',)
+    search_fields = ('name', 'slug')
 
 
 class FavoritesAdmin(admin.ModelAdmin):
